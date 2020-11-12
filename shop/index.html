@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/mdui.css">
     <script src="js/mdui.js"></script>
+    <script src="js/jquery.js"></script>
     <style>
         a {
             color: #616161;
@@ -475,37 +476,299 @@ text-align: center;"><i class="mdui-icon material-icons">favorite</i>喜欢</a>
                     <span><i class="mdui-icon material-icons">check_circle</i>售后服务政策</span>
                 </div>
             </div>
-<!-- 右侧信息结束位置 -->
+            <!-- 右侧信息结束位置 -->
 
         </div>
+        <!-- 价格说明 -->
         <div class="" style="width: 100%;height: 300px;background-color:#f5f5f5;">
-        <style>
-            .shuoming-title{
-                width: 1226px;
-    margin-right: auto;
-    margin-left: auto;
-            }
-            .shuoming-title h3{
-                font-size: 22px;
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 1em 0;
-            }
+            <style>
+                .instructions-title {
+                    width: 1226px;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
 
-.shuoming-div{
-    width: 100%;
-}
+                .instructions-title h3 {
+                    font-size: 22px;
+                    font-weight: 400;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    padding: 1em 0;
+                }
 
-        </style>
-            <div class="shuoming-title">
+                .instructions-div {
+                    width: 100%;
+                }
+            </style>
+            <div class="instructions-title">
                 <h3>价格说明</h3>
             </div>
-            <div class="shuoming-div">
+            <div class="instructions-div">
                 <img class="mdui-center" src="img/a482afa34053b1b32ece1023475af7fb.jpeg" lazy="loaded">
             </div>
-        
         </div>
+        <!-- 价格说明结束 -->
+        <!-- 页脚 -->
+        <style>
+            .site-footer .footer-service {
+                padding: 27px 0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .site-footer .list-service {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+            .site-footer .list-service li:first-child {
+                border-left: 0;
+            }
+
+            .site-footer .list-service li {
+                float: left;
+                width: 19.8%;
+                height: 25px;
+                border-left: 1px solid #e0e0e0;
+                font-size: 16px;
+                line-height: 25px;
+                text-align: center;
+            }
+
+            .site-footer .list-service a {
+                color: #616161;
+                -webkit-transition: color .2s;
+                transition: color .2s;
+            }
+        </style>
+        <div class="site-footer" style="width: 100%;background-color:#fff;">
+            <div class="mdui-center container" style="width:1226px;background-color: #fff;">
+
+                <div class="footer-service">
+                    <ul class="list-service mdui-clearfix">
+                        <li><a rel="nofollow" href="//www.mi.com/service/quick-repair" target="_blank"
+                                stat_exposure="true"><em class="iconfont-tool"></em>预约维修服务</a></li>
+                        <li><a rel="nofollow" href="//www.mi.com/service/exchange#back" target="_blank"
+                                stat_exposure="true"><em class="iconfont-circle-7"></em>7天无理由退货</a></li>
+                        <li><a rel="nofollow" href="//www.mi.com/service/exchange#back" target="_blank"
+                                stat_exposure="true"><em class="iconfont-circle-15"></em>15天免费换货</a></li>
+                        <li><a rel="nofollow" href="//www.mi.com/service/buy/Postal%20policy" target="_blank"
+                                stat_exposure="true"><em class="iconfont-gift"></em><span
+                                    id="J_footerPrice">满99元包邮</span></a></li>
+                        <li><a rel="nofollow" href="//www.mi.com/service/sitelist" target="_blank"
+                                stat_exposure="true"><em class="iconfont-location"></em>520余家售后网点</a></li>
+                    </ul>
+                </div>
+
+                <style>
+                    .site-footer .footer-links {
+                        padding: 40px 0;
+                    }
+
+                    .site-footer .footer-links .col-links {
+                        float: left;
+                        width: 160px;
+                        margin: 0;
+                    }
+
+                    .site-footer .footer-links .col-links dt {
+                        margin: -1px 0 26px;
+                        font-size: 14px;
+                        line-height: 1.25;
+                        color: #424242;
+                    }
+
+                    .site-footer .footer-links .col-links dd {
+                        margin: 10px 0 0;
+                        font-size: 12px;
+                    }
+
+                    .site-footer .footer-links .col-links a {
+                        color: #757575;
+                    }
+
+                    .site-footer .footer-links .col-contact {
+                        float: right;
+                        width: 251px;
+                        border-left: 1px solid #e0e0e0;
+                        text-align: center;
+                        color: #616161;
+                    }
+
+                    .site-footer .footer-links .col-contact .phone {
+                        font-size: 22px;
+                        line-height: 1;
+                        color: #ff6700;
+                    }
+
+                    .site-footer .footer-links .col-contact p {
+                        margin: 0 0 5px 0;
+                        font-size: 12px;
+                    }
+
+                    .btn1-line-primary {
+                        border-color: #ff6700 !important;
+                        background: #fff;
+                        color: #ff6700 !important;
+                    }
+
+                    .btn1-small {}
+
+                    .btn1 {
+                        width: 118px;
+                        height: 28px;
+                        font-size: 12px;
+                        line-height: 28px;
+                        display: inline-block;
+
+                        padding: 0;
+                        margin: 0;
+                        border: 1px solid #b0b0b0;
+                        text-align: center;
+                        color: #b0b0b0;
+                        cursor: pointer;
+                        -webkit-transition: all .4s;
+                        transition: all .4s;
+                    }
+
+                    .site-footer .footer-links .col-contact .follow {
+                        font-size: 12px;
+                        margin-top: 10px;
+                        position: relative;
+                    }
+
+                    .site-footer .footer-links .col-contact .follow .wb {
+                        background: url(https://cdn.cnbj1.fds.api.mi-img.com/staticsfile/global/wb.png) 50% 0 no-repeat;
+                        background-size: cover;
+                    }
+
+                    .site-footer .footer-links .col-contact .follow a {
+                        width: 24px;
+                        height: 24px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-left: 6px;
+                        margin-top: -3px;
+                    }
+
+                    .site-footer .footer-links .col-contact .follow .wx {
+                        background: url(https://cdn.cnbj1.fds.api.mi-img.com/staticsfile/global/wx.png) 50% 0 no-repeat;
+                        background-size: cover;
+                    }
+
+                    .site-footer .footer-links .col-contact .follow a {
+                        width: 24px;
+                        height: 24px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-left: 6px;
+                        margin-top: -3px;
+                    }
+
+                    .site-footer .footer-links .col-contact .follow img {
+                        width: 126px;
+                        height: 126px;
+                        z-index: 2;
+                        position: absolute;
+                        top: 20px;
+                        left: 100px;
+                        display: none;
+                    }
+                </style>
+                <div class="footer-links clearfix">
+                    <dl class="col-links col-links-first">
+                        <dt>帮助中心</dt>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/account/Account%20registration/"
+                                target="_blank" stat_exposure="true">账户管理</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/buy/SalesTime/" target="_blank"
+                                stat_exposure="true">购物指南</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/order/sendprogress/" target="_blank"
+                                stat_exposure="true">订单操作</a></dd>
+                    </dl>
+                    <dl class="col-links ">
+                        <dt>服务支持</dt>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/exchange" target="_blank"
+                                stat_exposure="true">售后政策</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/" target="_blank" stat_exposure="true">自助服务</a>
+                        </dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/download/" target="_blank"
+                                stat_exposure="true">相关下载</a></dd>
+                    </dl>
+                    <dl class="col-links ">
+                        <dt>线下门店</dt>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/mihome/list" target="_blank"
+                                stat_exposure="true">小米之家</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/sitelist" target="_blank"
+                                stat_exposure="true">服务网点</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/family-location" target="_blank"
+                                stat_exposure="true">授权体验店</a></dd>
+                    </dl>
+                    <dl class="col-links ">
+                        <dt>关于小米</dt>
+                        <dd><a rel="nofollow" href="//www.mi.com/about/" target="_blank" stat_exposure="true">了解小米</a>
+                        </dd>
+                        <dd><a rel="nofollow" href="//hr.xiaomi.com/" target="_blank" stat_exposure="true">加入小米</a></dd>
+                        <dd><a rel="nofollow" href="//company.mi.com/zh-cn/ir/indexContent/index.html" target="_blank"
+                                stat_exposure="true">投资者关系</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/csr/" target="_blank" stat_exposure="true">企业社会责任</a>
+                        </dd>
+                        <dd><a rel="nofollow" href="//integrity.mi.com/" target="_blank" stat_exposure="true">廉洁举报</a>
+                        </dd>
+                    </dl>
+                    <dl class="col-links ">
+                        <dt>关注我们</dt>
+                        <dd><a rel="nofollow" href="//weibo.com/xiaomishangcheng" target="_blank"
+                                stat_exposure="true">新浪微博</a></dd>
+                        <dd><a rel="nofollow" href="javascript:void(0);" id="J_siteWeixinCode"
+                                stat_exposure="true">官方微信</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/about/contact/" target="_blank"
+                                stat_exposure="true">联系我们</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/foundation/index" target="_blank"
+                                stat_exposure="true">公益基金会</a></dd>
+                    </dl>
+                    <dl class="col-links ">
+                        <dt>特色服务</dt>
+                        <dd><a rel="nofollow" href="//www.mi.com/order/fcode" target="_blank" stat_exposure="true">F
+                                码通道</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/order/giftcode" target="_blank"
+                                stat_exposure="true">礼物码</a></dd>
+                        <dd><a rel="nofollow" href="//www.mi.com/service/imei" target="_blank"
+                                stat_exposure="true">防伪查询</a></dd>
+                    </dl>
+                    <div class="col-contact">
+                        <p class="phone">400-100-5678</p>
+                        <p>8:00-18:00（仅收市话费）</p> <a rel="nofollow" class="btn1 btn1-line-primary " product_id="12609"
+                            gid="2203200050" stat_exposure="true"><em class="iconfont-message2"></em>
+                            人工客服 </a>
+                        <div class="follow">关注小米：<a href="https://weibo.com/xiaomishangcheng" target="_blank" class="wb"
+                                stat_exposure="true"></a><a href="javascript:void(0);" id="J_followWx" class="wx"
+                                stat_exposure="true"></a> <img
+                                src="//cdn.cnbj1.fds.api.mi-img.com/staticsfile/global/wx-img.png" id="J_followWxImg">
+                        </div>
+                    </div>
+                    <script>
+                        $('#J_followWx').hover(function () {
+                            $('#J_followWxImg').css("display", "inline");
+
+                        }, function () {
+                            $('#J_followWxImg').css("display", "none");
+
+                        });
+                    </script>
+                </div>
+
+            </div>
+        </div>
+        <!-- 页脚结束 -->
+        
+        <div class="site-info" style="width: 100%;background-color:#fff;">
+            <div class="mdui-center container" style="width:1226px;background-color: #fff;">
+              
+
+            </div>
+        </div>
+
+
     </div>
 </body>
 
