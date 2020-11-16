@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/mdui.css">
     <script src="js/mdui.js"></script>
-    <script src="js/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.js"></script>
     <style>
         a {
             color: #616161;
@@ -30,6 +30,7 @@
                 .zuoce a {
                     color: #b0b0b0;
                 }
+
                 .youce .sep {
                     margin: 0 .3em;
                 }
@@ -110,13 +111,118 @@
 
     <div class="mdui-typo">
 
+        <style type="text/css">
+            .magnify {
+                width: 500px;
+                margin: 30px auto;
+                position: relative;
+            }
+
+            .large {
+                width: 180px;
+                height: 180px;
+                position: absolute;
+                border-radius: 100%;
+                box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.8), 0 0 7px 7px rgba(0, 0, 0, 0.3), inset 0 0 40px 2px rgba(0, 0, 0, 0.3);
+                background: url(img/lunbo0.jpg) no-repeat;
+                display: none;
+            }
+
+            .small {
+                display: block;
+            }
+        </style>
 
 
 
         <div class="mdui-row" style="width: 1226px;margin: 30px auto;">
             <div class="mdui-col-xs-12 mdui-col-sm-6">
-                <img src="img/pms_1597145894.51396359.jpg">
+                <div class='magnify'>
+                    <div class='large'></div>
+                    <img src='img/lunbo0.jpg' width='500px' class='small'>
+                </div>
+                <div class="mdui-clearfix">
+                    <div style="width: 50px;height: 50px;position: absolute;left: 30px;"><span><i
+                                style="font-size: 50px;" class="mdui-icon material-icons">chevron_left</i></span></div>
+                    <style>
+                        #jindu {
+
+                            padding-left: 90px;
+
+                        }
+
+                        #jindu span {
+                            height: 5px;
+                            background-color: #616161;
+                            padding: 0px 25px;
+                            margin: auto 5px;
+                        }
+                    </style>
+                    <div id="jindu" class="mdui-valign"
+                        style="width: 500px;height: 50px;position: absolute;left: 60px;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div style="width: 50px;height: 50px;position: absolute;right: 30px;"><span><i
+                                style="font-size: 50px;" class="mdui-icon material-icons">chevron_right</i></span></div>
+                </div>
             </div>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    var native_width = 0;
+
+                    var native_height = 0;
+
+                    $('.small').load(function () {
+
+                        var img_obj = new Image();
+                        img_obj.src = $(this).attr('src');
+
+                        native_width = img_obj.width;
+                        native_height = img_obj.height;
+
+                        $('.magnify').mousemove(function (e) {
+
+                            var magnify_offset = $(this).offset();
+                            var mouse_x = e.pageX - magnify_offset.left;
+                            var mouse_y = e.pageY - magnify_offset.top;
+
+
+                            if (mouse_x > 0 && mouse_y > 0 && mouse_x < $(this).width() &&
+                                mouse_y < $(this).height()) {
+                                $('.large').fadeIn(100);
+                            } else {
+                                $('.large').fadeOut(100);
+                            }
+
+                            if ($('.large').is(':visible')) {
+
+                                var rx = Math.round(mouse_x / $('.small').width() *
+                                    native_width - $('.large').width() / 2) * -1;
+                                var ry = Math.round(mouse_y / $('.small').height() *
+                                    native_height - $('.large').height() / 2) * -1;
+
+
+                                var bgp = rx + 'px ' + ry + 'px';
+                                var gx = mouse_x - $('.large').width() / 2;
+                                var gy = mouse_y - $('.large').height() / 2;
+                                $('.large').css({
+                                    'left': gx,
+                                    'top': gy,
+                                    'backgroundPosition': bgp
+                                })
+                            }
+                        })
+                    })
+                })
+            </script>
+
+            
 
             <div class="mdui-col-xs-12 mdui-col-sm-6">
 
@@ -149,77 +255,77 @@
                 </div>
                 <style>
                     .mdui-clearfix {
-                    margin: 5px 0 0 5px;
+                        margin: 5px 0 0 5px;
                     }
 
                     ul {
-                    display: block;
-                    list-style-type: disc;
-                    margin-block-start: 1em;
-                    margin-block-end: 1em;
-                    margin-inline-start: 0px;
-                    margin-inline-end: 0px;
-                    padding-inline-start: 40px;
+                        display: block;
+                        list-style-type: disc;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        padding-inline-start: 40px;
                     }
 
                     .buy-option li {
-                    margin-right: 2px;
-                    margin-top: 10px;
-                    line-height: 42px;
-                    height: 42px;
-                    position: relative;
-                    border: 1px solid #e0e0e0;
-                    list-style: none;
-                    cursor: pointer;
-                    -webkit-transition: all .2s ease;
-                    transition: all .2s ease;
-                    float: left;
-                    width: 292px;
-                    font-size: 16px;
-                    text-align: center;
+                        margin-right: 2px;
+                        margin-top: 10px;
+                        line-height: 42px;
+                        height: 42px;
+                        position: relative;
+                        border: 1px solid #e0e0e0;
+                        list-style: none;
+                        cursor: pointer;
+                        -webkit-transition: all .2s ease;
+                        transition: all .2s ease;
+                        float: left;
+                        width: 292px;
+                        font-size: 16px;
+                        text-align: center;
                     }
 
                     .selected {
-                    border: 1px solid #ff6700 !important;
-                    color: #ff6700;
+                        border: 1px solid #ff6700 !important;
+                        color: #ff6700;
                     }
 
                     .buy-option2 li {
-                    margin-right: 2px;
-                    height: 135px;
-                    position: relative;
-                    border: 1px solid #e0e0e0;
-                    list-style: none;
-                    cursor: pointer;
-                    -webkit-transition: all .2s ease;
-                    transition: all .2s ease;
-                    float: left;
-                    width: 597px;
-                    font-size: 16px;
+                        margin-right: 2px;
+                        height: 135px;
+                        position: relative;
+                        border: 1px solid #e0e0e0;
+                        list-style: none;
+                        cursor: pointer;
+                        -webkit-transition: all .2s ease;
+                        transition: all .2s ease;
+                        float: left;
+                        width: 597px;
+                        font-size: 16px;
                     }
 
                     .buy-option2 li img {
-                    width: 50px;
-                    height: 50px;
-                    margin-right: 15px;
-                    margin-left: 10px;
-                    float: left;
+                        width: 50px;
+                        height: 50px;
+                        margin-right: 15px;
+                        margin-left: 10px;
+                        float: left;
                     }
 
                     .box span em {
-                    font-style: normal;
-                    font-size: 14px;
-                    background: #ff6700;
-                    display: inline-block;
-                    padding: 2px 6px;
-                    border-radius: 20px;
-                    color: #fff;
-                    margin-left: 2px;
+                        font-style: normal;
+                        font-size: 14px;
+                        background: #ff6700;
+                        display: inline-block;
+                        padding: 2px 6px;
+                        border-radius: 20px;
+                        color: #fff;
+                        margin-left: 2px;
                     }
 
                     .fj_title {
-                    font-weight: 900;
-                    font-size: 18px;
+                        font-weight: 900;
+                        font-size: 18px;
                     }
                 </style>
                 <div class="mdui-clearfix">
@@ -443,24 +549,24 @@
                 <style>
                     .selected-list ul,
                     li {
-                    margin: 0;
-                    padding: 0;
+                        margin: 0;
+                        padding: 0;
                     }
 
                     .selected-list li {
-                    list-style: none;
-                    line-height: 30px;
-                    color: #616161;
+                        list-style: none;
+                        line-height: 30px;
+                        color: #616161;
                     }
 
                     .selected-list ul li span {
-                    float: right;
+                        float: right;
                     }
 
                     .total-price {
-                    color: #ff6700;
-                    font-size: 24px;
-                    padding-top: 20px;
+                        color: #ff6700;
+                        font-size: 24px;
+                        padding-top: 20px;
                     }
                 </style>
                 <div class="mdui-clearfix"
@@ -684,7 +790,7 @@ text-align: center;"><i class="mdui-icon material-icons">favorite</i>喜欢</a>
                 }
 
                 .site-footer .footer-links .col-contact .follow .wb {
-                    background: url(./img/slogan2020.png/wb.png) 50% 0 no-repeat;
+                    background: url(./img/wb.png) 50% 0 no-repeat;
                     background-size: cover;
                 }
 
@@ -698,7 +804,7 @@ text-align: center;"><i class="mdui-icon material-icons">favorite</i>喜欢</a>
                 }
 
                 .site-footer .footer-links .col-contact .follow .wx {
-                    background: url(./img/slogan2020.png/wx.png) 50% 0 no-repeat;
+                    background: url(./img/wx.png) 50% 0 no-repeat;
                     background-size: cover;
                 }
 
