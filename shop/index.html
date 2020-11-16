@@ -142,7 +142,7 @@
                     <img src='img/lunbo0.jpg' width='500px' class='small'>
                 </div>
                 <div class="mdui-clearfix">
-                    <div style="width: 50px;height: 50px;position: absolute;left: 30px;"><span><i
+                    <div id="lunbo-left" style="width: 50px;height: 50px;position: absolute;left: 30px;"><span><i
                                 style="font-size: 50px;" class="mdui-icon material-icons">chevron_left</i></span></div>
                     <style>
                         #jindu {
@@ -222,7 +222,12 @@
                 })
             </script>
 
-            
+            <script>
+                $("#lunbo-left").click(function (e) { 
+                    e.preventDefault();
+                    
+                });
+            </script>
 
             <div class="mdui-col-xs-12 mdui-col-sm-6">
 
