@@ -124,11 +124,13 @@
                 position: absolute;
                 border-radius: 100%;
                 box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.8), 0 0 7px 7px rgba(0, 0, 0, 0.3), inset 0 0 40px 2px rgba(0, 0, 0, 0.3);
-                background: url(img/lunbo0.jpg) no-repeat;
+
                 display: none;
             }
 
             .small {
+                height: 500px;
+                width: 500px;
                 display: block;
             }
         </style>
@@ -138,48 +140,43 @@
         <div class="mdui-row" style="width: 1226px;margin: 30px auto;">
             <div class="mdui-col-xs-12 mdui-col-sm-6">
                 <div class='magnify'>
-                    <div class='large'></div>
-                    <img src='img/lunbo0.jpg' width='500px' class='small'>
+                    <div class='large' style="background: url(img/lunbo0.jpg) no-repeat;"></div>
+                    <img id="small" src='img/lunbo0.jpg' width='500px' class='small'>
                 </div>
                 <div class="mdui-clearfix">
                     <div id="lunbo-left" style="width: 50px;height: 50px;position: absolute;left: 30px;"><span><i
                                 style="font-size: 50px;" class="mdui-icon material-icons">chevron_left</i></span></div>
                     <style>
                         #jindu {
-
                             padding-left: 90px;
-
                         }
 
                         #jindu span {
                             height: 5px;
-                            background-color: #616161;
+                            background-color: #ccc;
                             padding: 0px 25px;
                             margin: auto 5px;
                         }
                     </style>
                     <div id="jindu" class="mdui-valign"
                         style="width: 500px;height: 50px;position: absolute;left: 60px;">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
                     </div>
-                    <div style="width: 50px;height: 50px;position: absolute;right: 30px;"><span><i
+                    <div id="lunbo-right" style="width: 50px;height: 50px;position: absolute;right: 30px;"><span><i
                                 style="font-size: 50px;" class="mdui-icon material-icons">chevron_right</i></span></div>
                 </div>
             </div>
 
             <script type="text/javascript">
-                $(document).ready(function () {
-
+                function datuload() {
                     var native_width = 0;
-
                     var native_height = 0;
 
                     $('.small').load(function () {
-
                         var img_obj = new Image();
                         img_obj.src = $(this).attr('src');
 
@@ -219,14 +216,54 @@
                             }
                         })
                     })
-                })
+                }
+
+                $(document).ready(datuload())
             </script>
 
             <script>
-                $("#lunbo-left").click(function (e) { 
-                    e.preventDefault();
-                    
+                var i = 0;
+                var lunbojpg = ["img/lunbo0.jpg", "img/lunbo1.jpg", "img/lunbo2.jpg", "img/lunbo3.jpg",
+                    "img/lunbo4.jpg"];
+                    $("#jindu span").eq("0").css("background-color", "#a3a3a3");
+
+                $("#lunbo-left").click(function () {
+                    if (i != 0) {
+                        i--;
+                    } else {
+                        i = lunbojpg.length - 1;
+                    };
+                    $("#small").prop("src", lunbojpg[i]);
+                    $(".large").css("background", "url(" + lunbojpg[i] + ") no-repeat");
+                    $("#jindu span").css("background-color", "#ccc");
+                    $("#jindu span").eq(i).css("background-color", "#a3a3a3");
+                    console.log(i);
                 });
+
+                $("#lunbo-right").click(function () {
+                    if (i < lunbojpg.length - 1) {
+                        i++;
+                    } else {
+                        i = 0;
+                    };
+                    $("#small").prop("src", lunbojpg[i]);
+                    $(".large").css("background", "url(" + lunbojpg[i] + ") no-repeat");
+                    $("#jindu span").css("background-color", "#ccc");
+                    $("#jindu span").eq(i).css("background-color", "#a3a3a3");
+                    console.log(i);
+                });
+
+                setInterval(() => {
+                    if (i < lunbojpg.length - 1) {
+                        i++;
+                    } else {
+                        i = 0;
+                    };
+                    $("#small").prop("src", lunbojpg[i]);
+                    $(".large").css("background", "url(" + lunbojpg[i] + ") no-repeat");
+                    $("#jindu span").css("background-color", "#ccc");
+                    $("#jindu span").eq(i).css("background-color", "#a3a3a3");
+                }, 5000);
             </script>
 
             <div class="mdui-col-xs-12 mdui-col-sm-6">
@@ -769,7 +806,6 @@ text-align: center;"><i class="mdui-icon material-icons">favorite</i>喜欢</a>
                     color: #ff6700 !important;
                 }
 
-                .btn1-small {}
 
                 .btn1 {
                     width: 118px;
