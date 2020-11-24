@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/mdui.css">
     <script src="js/mdui.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script src="./js/jquery.js"></script>
     <style>
         a {
             color: #616161;
@@ -76,28 +76,630 @@
           <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a> -->
             </div>
             <div style="height: 0.5px;width: 100%;border-bottom: gray solid 0.5px;"></div>
+            <div style="height: 40px;width: 1226px;margin: 0 auto;padding-top: 18px;">
+                <div style="float: left;">
+                    <span style="font-size: 20px;">小米10至尊纪念版</span><span> | </span><span><a
+                            style="text-decoration: none;" href="https://www.mi.com/mi10youth">小米10
+                            青春版</a></span>
+                </div>
+                <div style="float: right;">
+                    <span><a style="text-decoration: none;" href="">概述</a></span>
 
+                    <span><a style="text-decoration: none;" href=""> | </a></span>
+                    <span><a style="text-decoration: none;" href="">参数</a></span>
+
+                    <span><a style="text-decoration: none;" href=""> | </a></span>
+                    <span><a style="text-decoration: none;" href="">相机研发揭秘</a></span>
+
+                    <span><a style="text-decoration: none;" href=""> | </a></span>
+                    <span><a style="text-decoration: none;" href="">F码通道</a></span>
+
+                    <span><a style="text-decoration: none;" href=""> | </a></span>
+                    <span><a style="text-decoration: none;" href="">咨询客服</a></span>
+
+                    <span><a style="text-decoration: none;" href=""> | </a></span>
+                    <span><a style="text-decoration: none;" href="">用户评价</a></span>
+
+
+
+                </div>
+            </div>
         </div>
 
     </div>
 
 
     <div class="mdui-typo">
-        <div style="position: relative;" id="cas">
-            <img src="img/index_header_bg.jpg" />
+
+        <style type="text/css">
+            .magnify {
+                width: 500px;
+                margin: 30px auto;
+                position: relative;
+            }
+
+            .large {
+                width: 180px;
+                height: 180px;
+                position: absolute;
+                border-radius: 100%;
+                box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.8), 0 0 7px 7px rgba(0, 0, 0, 0.3), inset 0 0 40px 2px rgba(0, 0, 0, 0.3);
+
+                display: none;
+            }
+
+            .small {
+                height: 500px;
+                width: 500px;
+                display: block;
+            }
+        </style>
 
 
-            <div class="mdui-text-center" style="position: absolute;right: 20%;top: 12%;">
-                <img src="img/index_logo.png" /><br/>
-                <span style="font-size: 47px;color: #fff;">
-                    <span style="font-size: 18px;">￥</span><span> 5299 </span><span style="font-size: 18px;">起</span>
-                </span><br/>
-                <a style="font-size: 24px;color: #b6edf9;" href="index.html">点击购买
-                    ></a>
+
+        <div class="mdui-row" style="width: 1226px;margin: 30px auto;">
+            <div class="mdui-col-xs-12 mdui-col-sm-6">
+                <div class='magnify'>
+                    <div class='large' style="background: url(img/lunbo0.jpg) no-repeat;"></div>
+                    <img id="small" src='img/lunbo0.jpg' width='500px' class='small'>
+                </div>
+                <div class="mdui-clearfix">
+                    <div id="lunbo-left" style="width: 50px;height: 50px;position: absolute;left: 30px;"><span><i
+                                style="font-size: 50px;" class="mdui-icon material-icons">chevron_left</i></span></div>
+                    <style>
+                        #jindu {
+                            padding-left: 90px;
+                        }
+
+                        #jindu span {
+                            height: 5px;
+                            background-color: #ccc;
+                            padding: 0px 25px;
+                            margin: auto 5px;
+                        }
+                    </style>
+                    <div id="jindu" class="mdui-valign"
+                        style="width: 500px;height: 50px;position: absolute;left: 60px;">
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
+                        <span class="jinduxuanzhong"></span>
+                    </div>
+                    <div id="lunbo-right" style="width: 50px;height: 50px;position: absolute;right: 30px;"><span><i
+                                style="font-size: 50px;" class="mdui-icon material-icons">chevron_right</i></span></div>
+                </div>
             </div>
 
+            <script type="text/javascript">
+                function datuload() {
+                    var native_width = 0;
+                    var native_height = 0;
+
+                    $('.small').load(function () {
+                        var img_obj = new Image();
+                        img_obj.src = $(this).attr('src');
+
+                        native_width = img_obj.width;
+                        native_height = img_obj.height;
+
+                        $('.magnify').mousemove(function (e) {
+
+                            var magnify_offset = $(this).offset();
+                            var mouse_x = e.pageX - magnify_offset.left;
+                            var mouse_y = e.pageY - magnify_offset.top;
+
+
+                            if (mouse_x > 0 && mouse_y > 0 && mouse_x < $(this).width() &&
+                                mouse_y < $(this).height()) {
+                                $('.large').fadeIn(100);
+                            } else {
+                                $('.large').fadeOut(100);
+                            }
+
+                            if ($('.large').is(':visible')) {
+
+                                var rx = Math.round(mouse_x / $('.small').width() *
+                                    native_width - $('.large').width() / 2) * -1;
+                                var ry = Math.round(mouse_y / $('.small').height() *
+                                    native_height - $('.large').height() / 2) * -1;
+
+
+                                var bgp = rx + 'px ' + ry + 'px';
+                                var gx = mouse_x - $('.large').width() / 2;
+                                var gy = mouse_y - $('.large').height() / 2;
+                                $('.large').css({
+                                    'left': gx,
+                                    'top': gy,
+                                    'backgroundPosition': bgp
+                                })
+                            }
+                        })
+                    })
+                }
+
+                $(document).ready(datuload())
+            </script>
+
+            <script>
+                var i = 0;
+                var lunbojpg = ["img/lunbo0.jpg", "img/lunbo1.jpg", "img/lunbo2.jpg", "img/lunbo3.jpg",
+                    "img/lunbo4.jpg"];
+                    $("#jindu span").eq("0").css("background-color", "#a3a3a3");
+
+                $("#lunbo-left").click(function () {
+                    if (i != 0) {
+                        i--;
+                    } else {
+                        i = lunbojpg.length - 1;
+                    };
+                    $("#small").prop("src", lunbojpg[i]);
+                    $(".large").css("background", "url(" + lunbojpg[i] + ") no-repeat");
+                    $("#jindu span").css("background-color", "#ccc");
+                    $("#jindu span").eq(i).css("background-color", "#a3a3a3");
+                    console.log(i);
+                });
+
+                $("#lunbo-right").click(function () {
+                    if (i < lunbojpg.length - 1) {
+                        i++;
+                    } else {
+                        i = 0;
+                    };
+                    $("#small").prop("src", lunbojpg[i]);
+                    $(".large").css("background", "url(" + lunbojpg[i] + ") no-repeat");
+                    $("#jindu span").css("background-color", "#ccc");
+                    $("#jindu span").eq(i).css("background-color", "#a3a3a3");
+                    console.log(i);
+                });
+
+                setInterval(() => {
+                    if (i < lunbojpg.length - 1) {
+                        i++;
+                    } else {
+                        i = 0;
+                    };
+                    $("#small").prop("src", lunbojpg[i]);
+                    $(".large").css("background", "url(" + lunbojpg[i] + ") no-repeat");
+                    $("#jindu span").css("background-color", "#ccc");
+                    $("#jindu span").eq(i).css("background-color", "#a3a3a3");
+                }, 5000);
+            </script>
+
+            <div class="mdui-col-xs-12 mdui-col-sm-6">
+
+                <div style="height: 35px;"> <img src="img/5140715760aa69c857147650cd40c33a.jpg"
+                        style="float: left;height: 100%;margin-right: 10px;" alt="">
+
+                    <span style="float: left;font-size: 20px;">小米10至尊纪念版</span></div><br />
+
+
+                <p style="font-size: 12px;color: #b0b0b0;"><span
+                        style="color: rgb(255, 74, 0);">「碎屏保、延保5折；+1元得200G云空间月卡；最高享24期免息；可使用北京消费券；购机得双倍米金」</span>120X
+                    超远变焦 / 120W 秒充科技 / 120Hz刷新率 + 240Hz采样率 / 骁龙865旗舰处理器 / 双模5G / 10倍混合光学变焦 / OIS光学防抖+EIS数字防抖 /
+                    2000万超清前置相机 / 双串蝶式石墨烯基锂离子电池 / 等效4500mAh大电量 / 120W 有线秒充+50W无线秒充+10W无线反充 / WiFi 6 / 多功能NFC / 红外遥控</p>
+
+                <p style="color: #ff6700;font-size: 15px;">小米自营</p>
+                <p style="color: #ff6700;font-size: 24px">6999元</p>
+
+
+
+
+                <div class="mdui-card" style="padding: 25px;background-color: #fafafa;">
+                    <div>
+                        <span style="font-size: 6px;"><i style="color: #999"
+                                class="mdui-icon material-icons">location_on</i>北京 北京市 海淀区
+                            清河街道</span><span style="color: #ff6700"> 修改</span>
+                    </div>
+                    <div>
+                        <span style="font-size: 6px;color: #ff6700;margin-left: 25px;">有现货</span>
+                    </div>
+                </div>
+                <style>
+                    .mdui-clearfix {
+                        margin: 5px 0 0 5px;
+                    }
+
+                    ul {
+                        display: block;
+                        list-style-type: disc;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        padding-inline-start: 40px;
+                    }
+
+                    .buy-option li {
+                        margin-right: 2px;
+                        margin-top: 10px;
+                        line-height: 42px;
+                        height: 42px;
+                        position: relative;
+                        border: 1px solid #e0e0e0;
+                        list-style: none;
+                        cursor: pointer;
+                        -webkit-transition: all .2s ease;
+                        transition: all .2s ease;
+                        float: left;
+                        width: 292px;
+                        font-size: 16px;
+                        text-align: center;
+                    }
+
+                    .selected {
+                        border: 1px solid #ff6700 !important;
+                        color: #ff6700;
+                    }
+
+                    .buy-option2 li {
+                        margin-right: 2px;
+                        height: 135px;
+                        position: relative;
+                        border: 1px solid #e0e0e0;
+                        list-style: none;
+                        cursor: pointer;
+                        -webkit-transition: all .2s ease;
+                        transition: all .2s ease;
+                        float: left;
+                        width: 597px;
+                        font-size: 16px;
+                    }
+
+                    .buy-option2 li img {
+                        width: 50px;
+                        height: 50px;
+                        margin-right: 15px;
+                        margin-left: 10px;
+                        float: left;
+                    }
+
+                    .box span em {
+                        font-style: normal;
+                        font-size: 14px;
+                        background: #ff6700;
+                        display: inline-block;
+                        padding: 2px 6px;
+                        border-radius: 20px;
+                        color: #fff;
+                        margin-left: 2px;
+                    }
+
+                    .fj_title {
+                        font-weight: 900;
+                        font-size: 18px;
+                    }
+                </style>
+                <div class="mdui-clearfix">
+                    <span style="font-size: 20px;">选择颜色</span>
+                    <form action="">
+                        <ul class="buy-option" style="margin: 0;padding: 0;">
+                            <li>陶瓷黑</li>
+                            <li>透明版</li>
+                            <li class="selected">亮银版</li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="mdui-clearfix">
+                    <span style="font-size: 20px;">选择版本</span>
+                    <form action="">
+                        <ul class="buy-option" style="margin: 0;padding: 0;">
+                            <li class="selected">16GB+512GB</li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="mdui-clearfix">
+                    <div class="mdui-clearfix"><span style="float: left;font-size: 20px;">选择小米提供的意外保护</span><span
+                            style="float: right;color: #ff6700;">了解意外保护 &gt;</span></div>
+                    <form action="">
+                        <ul class="buy-option2 mdui-clearfix" style="margin: 0;padding: 0;">
+                            <li>
+                                <div style="margin:20px 30px 20px 30px;">
+                                    <label class="mdui-radio mdui-float-left">
+                                        <input type="radio" name="group1" />
+                                        <i class="mdui-radio-icon"></i>
+                                    </label>
+                                    <img src="img/pms_1596695587.15667138.png" alt="">
+                                    <div class="box mdui-float-left">
+                                        <span class="fj_title">意外保障服务<em>349元</em></span>
+                                        <div class="desc">手机意外碎屏/进水/碾压等损坏</div>
+                                        <div style="font-size: 10px;"><label class="mdui-checkbox">
+                                                <input type="checkbox" />
+                                                <i class="mdui-checkbox-icon"></i>
+                                                我已同意
+                                            </label>
+                                            <span style="color: #ff6700;">服务条款</span>|<span
+                                                style="color: #ff6700;">常见问题</span>
+
+                                            <span style="position: absolute;right: 20px;bottom: 28px;">349元</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="margin:20px 30px 20px 30px;">
+                                    <label class="mdui-radio mdui-float-left">
+                                        <input type="radio" name="group1" />
+                                        <i class="mdui-radio-icon"></i>
+                                    </label>
+                                    <img src="img/pms_1596695587.15667138.png" alt="">
+                                    <div class="box mdui-float-left">
+                                        <span class="fj_title">碎屏保障服务<em>已省125元</em></span>
+                                        <div class="desc">手机意外碎屏</div>
+                                        <div style="font-size: 10px;"><label class="mdui-checkbox">
+                                                <input type="checkbox" />
+                                                <i class="mdui-checkbox-icon"></i>
+                                                我已同意
+                                            </label>
+                                            <span style="color: #ff6700;">服务条款</span>|<span
+                                                style="color: #ff6700;">常见问题</span>
+                                            <span style="position: absolute;right: 20px;bottom: 28px;">124元</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+
+
+                <div class="mdui-clearfix">
+                    <div class="mdui-clearfix"><span style="float: left;font-size: 20px;">选择小米提供的延长保修</span><span
+                            style="float: right;color: #ff6700;">了解延长保修 &gt;</span></div>
+                    <form action="">
+                        <ul class="buy-option2 mdui-clearfix" style="margin: 0;padding: 0;">
+                            <li>
+                                <div style="margin:20px 30px 20px 30px;">
+                                    <label class="mdui-radio mdui-float-left">
+                                        <input type="radio" name="group1" />
+                                        <i class="mdui-radio-icon"></i>
+                                    </label>
+                                    <img src="img/pms_1596695587.15667138.png" alt="">
+                                    <div class="box mdui-float-left">
+                                        <span class="fj_title">延长保修服务<em>已省80元</em></span>
+                                        <div class="desc">厂保延一年，性能故障免费维修</div>
+                                        <div style="font-size: 10px;"><label class="mdui-checkbox">
+                                                <input type="checkbox" />
+                                                <i class="mdui-checkbox-icon"></i>
+                                                我已同意
+                                            </label>
+                                            <span style="color: #ff6700;">服务条款</span>|<span
+                                                style="color: #ff6700;">常见问题</span>
+
+                                            <span style="position: absolute;right: 20px;bottom: 28px;">79元</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+
+
+
+
+
+                <div class="mdui-clearfix">
+                    <div class="mdui-clearfix"><span style="float: left;font-size: 20px;">选择小米提供的云空间服务</span><span
+                            style="float: right;color: #ff6700;">了解云空间服务 &gt;</span></div>
+                    <form action="">
+                        <ul class="buy-option2 mdui-clearfix" style="margin: 0;padding: 0;">
+                            <li>
+                                <div style="margin:20px 30px 20px 30px;">
+                                    <label class="mdui-radio mdui-float-left">
+                                        <input type="radio" name="group1" />
+                                        <i class="mdui-radio-icon"></i>
+                                    </label>
+                                    <img src="img/pms_1600176481.06844959.png" alt="">
+                                    <div class="box mdui-float-left">
+                                        <span class="fj_title">云空间年卡200G<em>159元</em></span>
+                                        <div class="desc">主商品签收后，自动激活至下单帐号</div>
+                                        <div style="font-size: 10px;"><label class="mdui-checkbox">
+                                                <input type="checkbox" />
+                                                <i class="mdui-checkbox-icon"></i>
+                                                我已同意
+                                            </label>
+                                            <span style="color: #ff6700;">服务条款</span>|<span
+                                                style="color: #ff6700;">常见问题</span>
+
+                                            <span style="position: absolute;right: 20px;bottom: 28px;">159元</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="margin:20px 30px 20px 30px;">
+                                    <label class="mdui-radio mdui-float-left">
+                                        <input type="radio" name="group1" />
+                                        <i class="mdui-radio-icon"></i>
+                                    </label>
+                                    <img src="img/pms_1600176481.06844959.png" alt="">
+                                    <div class="box mdui-float-left">
+                                        <span class="fj_title">云空间年卡 50G<em>49元</em></span>
+                                        <div class="desc">主商品签收后，自动激活至下单帐号</div>
+                                        <div style="font-size: 10px;"><label class="mdui-checkbox">
+                                                <input type="checkbox" />
+                                                <i class="mdui-checkbox-icon"></i>
+                                                我已同意
+                                            </label>
+                                            <span style="color: #ff6700;">服务条款</span>|<span
+                                                style="color: #ff6700;">常见问题</span>
+                                            <span style="position: absolute;right: 20px;bottom: 28px;">49元</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="margin:20px 30px 20px 30px;">
+                                    <label class="mdui-radio mdui-float-left">
+                                        <input type="radio" name="group1" />
+                                        <i class="mdui-radio-icon"></i>
+                                    </label>
+                                    <img src="img/pms_1600176481.06844959.png" alt="">
+                                    <div class="box mdui-float-left">
+                                        <span class="fj_title">云空间月卡200G<em>已省18元</em></span>
+                                        <div class="desc">主商品签收后，自动激活至下单帐号</div>
+                                        <div style="font-size: 10px;"><label class="mdui-checkbox">
+                                                <input type="checkbox" />
+                                                <i class="mdui-checkbox-icon"></i>
+                                                我已同意
+                                            </label>
+                                            <span style="color: #ff6700;">服务条款</span>|<span
+                                                style="color: #ff6700;">常见问题</span>
+                                            <span style="position: absolute;right: 20px;bottom: 28px;">1元</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="margin:20px 30px 20px 30px;">
+                                    <label class="mdui-radio mdui-float-left">
+                                        <input type="radio" name="group1" />
+                                        <i class="mdui-radio-icon"></i>
+                                    </label>
+                                    <img src="img/pms_1600176481.06844959.png" alt="">
+                                    <div class="box mdui-float-left">
+                                        <span class="fj_title">云空间月卡 50G<em>6元</em></span>
+                                        <div class="desc">主商品签收后，自动激活至下单帐号</div>
+                                        <div style="font-size: 10px;"><label class="mdui-checkbox">
+                                                <input type="checkbox" />
+                                                <i class="mdui-checkbox-icon"></i>
+                                                我已同意
+                                            </label>
+                                            <span style="color: #ff6700;">服务条款</span>|<span
+                                                style="color: #ff6700;">常见问题</span>
+                                            <span style="position: absolute;right: 20px;bottom: 28px;">6元</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+
+
+                <style>
+                    .selected-list ul,
+                    li {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .selected-list li {
+                        list-style: none;
+                        line-height: 30px;
+                        color: #616161;
+                    }
+
+                    .selected-list ul li span {
+                        float: right;
+                    }
+
+                    .total-price {
+                        color: #ff6700;
+                        font-size: 24px;
+                        padding-top: 20px;
+                    }
+                </style>
+                <div class="mdui-clearfix"
+                    style="background-color: #f9f9fa;padding: 30px;margin-bottom: 30px;margin-top: 30px;">
+                    <div class="selected-list">
+                        <ul style="padding-left: 0px;">
+                            <li>小米10至尊纪念版 16GB+512GB 陶瓷黑<span>6999元</span></li>
+                        </ul>
+                        <div class="total-price">总计：6999元</div>
+                    </div>
+                </div>
+
+                <div class="mdui-clearfix">
+
+                    <a style="    width: 298px;
+                    height: 52px;
+                    line-height: 52px;
+                    font-size: 16px;background: #ff6700;
+    border-color: #ff6700;
+    color: #fff;
+    text-align: center;">加入购物车</a>
+
+                    <a style="    width: 150px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+    background: #b0b0b0;
+border-color: #b0b0b0;
+color: #fff;
+text-align: center;"><i class="mdui-icon material-icons">favorite</i>喜欢</a>
+                </div>
+
+
+
+                <style>
+                    .info {
+
+                        display: inline-block;
+                        margin-right: 15px;
+                        line-height: 30px;
+                        margin-bottom: 10px;
+                        cursor: default;
+                        color: #b0b0b0;
+                    }
+                </style>
+
+                <div class=" mdui-clearfix info" style="margin-bottom: 30px;margin-top: 30px;">
+                    <span><i class="mdui-icon material-icons">check_circle</i>小米自营</span>
+                    <span><i class="mdui-icon material-icons">check_circle</i>小米发货</span>
+                    <span><i class="mdui-icon material-icons">check_circle</i>7天无理由退货</span>
+                    <span><i class="mdui-icon material-icons">check_circle</i>运费说明</span>
+                    <span><i class="mdui-icon material-icons">check_circle</i>企业信息</span>
+                    <span><i class="mdui-icon material-icons">check_circle</i>售后服务政策</span>
+                    <span><i class="mdui-icon material-icons">check_circle</i>售后服务政策</span>
+                </div>
+            </div>
+            <!-- 右侧信息结束位置 -->
 
         </div>
+        <!-- 价格说明 -->
+        <div class="" style="width: 100%;height: 300px;background-color:#f5f5f5;">
+            <style>
+                .instructions-title {
+                    width: 1226px;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+
+                .instructions-title h3 {
+                    font-size: 22px;
+                    font-weight: 400;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    padding: 1em 0;
+                }
+
+                .instructions-div {
+                    width: 100%;
+                }
+            </style>
+            <div class="instructions-title">
+                <h3>价格说明</h3>
+            </div>
+            <div class="instructions-div">
+                <img class="mdui-center" src="img/a482afa34053b1b32ece1023475af7fb.jpeg" lazy="loaded">
+            </div>
+        </div>
+        <!-- 价格说明结束 -->
+
+
+
     </div>
 
     <!-- 页脚 -->
@@ -334,7 +936,7 @@
                     <div class="follow">关注小米：<a href="https://weibo.com/xiaomishangcheng" target="_blank" class="wb"
                             stat_exposure="true"></a><a href="javascript:void(0);" id="J_followWx" class="wx"
                             stat_exposure="true"></a> <img
-                            src="//cdn.cnbj1.fds.api.mi-img.com/staticsfile/global/wx-img.png" id="J_followWxImg">
+                            src="./img/wx-img.png" id="J_followWxImg">
                     </div>
                 </div>
                 <script>
