@@ -673,9 +673,10 @@ img {
 .footer2-outer {
   height: 191px;
   background: #f3f3f3;
+  padding-bottom: 40px;
 }
 #footer2 {
-  width: 1190px;
+  width: 1065px;
   margin: 0 auto;
   padding-top: 36px;
 }
@@ -689,7 +690,7 @@ img {
 }
 
 #footer2 .wrap-link {
-  width: 140px;
+  width: 20%;
   float: left;
 }
 #footer2 .wrap-link h3 {
