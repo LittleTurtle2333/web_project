@@ -275,7 +275,7 @@ img{border: 0;}
 #top .seek{
 	width: 580px;
 	height: 36px;
-	border: 2px solid #dd0207;
+	border: 2px solid #dd00a7;
 	line-height: 36px;
 	font-size: 14px;
 	position:absolute;
@@ -330,7 +330,7 @@ img{border: 0;}
 	display: inline-block;
 	width: 67px;
 	height: 36px;
-	background: #DD0207;
+	background: #dd00a7;
 	text-align: center;
 	color: #FFFFFF;
 	float: right;
@@ -356,6 +356,7 @@ img{border: 0;}
 }
 
 #nav{
+	background: #f8f8f8;
 	width: 1190px;
 	height: 35px;
 	margin: 0 auto;
@@ -363,18 +364,18 @@ img{border: 0;}
 }
 #menu{
 	width: 186px;
-	background: #dd0207;
+	background: #f1f1f1;
 	float: left;
 	padding-left: 14px;
 }
 #menu .cart{
-	display: block;
-	width: 147px;
+	/* display: block;
+	width: 147px; */
 	line-height: 35px;
-	color: #ffffff;
+	color: #585858;
 	font-size: 15px;
+	font-weight: 700;
 	text-align: center;
-	background: url(../img/base/HIMALL_admin11_04_03.png) no-repeat left;
 }
 #nav .nav-right{
 	float: left;
@@ -382,7 +383,7 @@ img{border: 0;}
 }
 #nav .nav-right li{
 	float: left;
-	padding: 0 39px;
+	padding: 0 12px;
 }
 #nav .nav-right li a{
 	line-height: 35px;
