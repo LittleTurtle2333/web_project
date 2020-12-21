@@ -54,9 +54,9 @@ $(function  () {
 	
 	//banner层小广告
 	$('.small-ad').hover(function  () {
-		$(this).stop().animate({right:365,opacity:1},200);
+		$(this).stop().animate({right:380,opacity:1},200);
 	},function  () {
-		$(this).stop().animate({right:360,opacity:0.7},200);
+		$(this).stop().animate({right:375,opacity:0.7},200);
 	})
 	
 	

@@ -111,7 +111,7 @@ $(function  () {
 		$('.cart-more').eq(0).show();
 	},
 	function  () {
-		$('.cart-more').eq(0).hide();
+		// $('.cart-more').eq(0).hide();
 	});
 	//================
 	$('.grape').hover(function  () {
@@ -153,7 +153,7 @@ $(function  () {
 	$('.cart-more').hover(function  () {
 		$(this).show();
 	},function  () {
-		$(this).hide();
+		// $(this).hide();
 	})
 	
 	
