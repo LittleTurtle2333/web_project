@@ -569,7 +569,7 @@ img {
   top: 2px;
   z-index: 99;
   display: none;
-   font-size: 14px;
+  font-size: 14px;
 }
 #cart-all .cart-more dl {
   float: left;
@@ -602,7 +602,7 @@ img {
 }
 
 #cart-all .cart-more .cart-more-ad {
-  width: 180px;
+  width: 210px;
   height: 100%;
   position: absolute;
   right: 0;
@@ -1039,10 +1039,10 @@ img {
   -ms-flex-align: center !important;
   align-items: center !important;
 }
-.smail img{
+.smail img {
   width: 200px;
   height: 235px;
 }
-.cart-more-item{
-  margin-top: 15px;
+.cart-more-item {
+  margin-top: 25px;
 }
