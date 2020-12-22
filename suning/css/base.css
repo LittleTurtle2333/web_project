@@ -379,9 +379,6 @@ img {
   width: 194px;
   height: 55px;
 }
-#logo img {
-  width: 145px;
-}
 
 #top .seek {
   width: 580px;
@@ -740,9 +737,9 @@ img {
   border-top: 1px solid #dd00a7;
 }
 #footer3 {
-  width: 1190px;
+  width: 1000px;
   margin: 20px auto;
-  
+
   line-height: 39px;
 }
 #footer3 a {
@@ -1031,4 +1028,17 @@ img {
 #footer3 p {
   font-size: 12px;
   line-height: 2;
+}
+
+.valign {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+.smail img{
+  width: 200px;
+  height: 235px;
 }

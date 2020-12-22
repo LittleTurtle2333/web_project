@@ -73,53 +73,53 @@
 	float: left;
 }
 
-.limit-buy{
+.coupons{
 	width: 1190px;
-	height: 487px;
-	margin: 0 auto;
+	height: 75px;
+	margin: 50px auto 100px;
 }
-.limit-buy-title{
+.coupons-title{
 	width: 230px;
 	height: 24px;
 	background: url(../img/index/Himall_web.png) -1119px 0;
 	margin: 48px auto;
 }
 
-.limit-buy-goods li{
+.coupons-goods li{
 	float: left;
 	width: 231px;
 	height: 340px;
 	margin-right: 7px;
 }
-.limit-buy-goods .limit-Img{
+.coupons-goods .limit-Img{
 	display: block;
 	width: 230px;
 	height: 230px;
 	border: 1px solid #f9f9f9;
 	border-radius: 5px;
 }
-.limit-buy-goods .limit-Img img{
+.coupons-goods .limit-Img img{
 	width: 230px;
 	height: 230px;
 }
-.limit-buy-goods p{
+.coupons-goods p{
 	line-height: 48px;
 	font-size: 11px;
 	color: #303030;
 }
-.limit-buy-goods span{
+.coupons-goods span{
 	display: block;
 	font-size: 9px;
 	font-weight: 200;
 	color: #303030;
 }
-.limit-buy-goods span b{
+.coupons-goods span b{
 	font-size: 18px;
 	padding-left: 8px;
 	font-weight:600;
 	color: #F00F34;
 }
-.limit-buy-goods .limit-Btn{
+.coupons-goods .limit-Btn{
 	display: block;
 	width: 228px;
 	height: 22px;
@@ -131,7 +131,7 @@
 	border: 1px solid #FF2A3E;
 	position: relative;
 }
-.limit-buy-goods .limit-Btn i{
+.coupons-goods .limit-Btn i{
 	display: block;
 	float: left;
 	width: 10px;
@@ -175,7 +175,7 @@
 
 
 .goods-outer{
-	width: 1190px;
+	width: 1210px;
 	height: 764px;
 	margin: 0 auto;
 }
@@ -224,10 +224,11 @@
 
 .goods-menu{
 	position: relative;
-	width: 230px;
-	height: 450px;
+	width: 210px;
+	height: 470px;
 	float: left;
-	background: url(../img/index/floor_ROne_20160921104324833686.jpg) no-repeat;
+	background: url(../img/index/T1RAV7BgCv1RCvBVdK_220_278.jpg) no-repeat;
+	background-color: #719ef7;
 }
 .goods-menu .menu-list{
 	width: 208px;
@@ -291,8 +292,8 @@
 
 
 .goods-block{
-	width: 950px;
-	height: 450px;
+	width: 1000px;
+	height: 470px;
 	float: right;
 	overflow: hidden;
 	position: relative;
@@ -305,18 +306,18 @@
 	float: left;
 }
 .goods-block .block .p1{
-	margin-right: 10px;
+	/* margin-right: 10px; */
 }
 .goods-block .block .p3{
-	margin-left: 7px;
-	margin-bottom: 9px;
+	/* margin-left: 7px;
+	margin-bottom: 9px; */
 }
 .goods-block .block .p4{
-	margin-right: 7px;
+	/* margin-right: 7px; */
 }
 
 .goods-block .block-tab{
-	width: 950px;
+	width: 960px;
 	height: 450px;
 	overflow: hidden;
 	position: absolute;
@@ -514,5 +515,7 @@
 	top: 0;
 }
 
-
+body{
+	min-width: 1900px;
+}
 

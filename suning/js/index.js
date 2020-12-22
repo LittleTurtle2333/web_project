@@ -67,7 +67,7 @@ $(function  () {
 		for (var i=0;i<data.length;i++) {
 			var obj = data[i];
 			$('.limit-Img img').eq(i).attr('src',obj.img);
-			$('.limit-buy-goods li span b').eq(i).html(obj.price+".00");
+			$('.coupons-goods li span b').eq(i).html(obj.price+".00");
 			
 			countDown (obj.time,i);
 			
@@ -92,9 +92,9 @@ $(function  () {
 				hours=parseInt((t-day*24*60*60*1000)/3600/1000);
 				minutes=parseInt((t-day*24*60*60*1000-hours*3600*1000)/60/1000);
 				seconds=parseInt((t-day*24*60*60*1000-hours*3600*1000-minutes*60*1000)/1000);
-				$('.limit-buy-goods p').eq(i).html("还剩"+day+"天"+hours+"时"+minutes+"分"+seconds+"秒结束");
+				$('.coupons-goods p').eq(i).html("还剩"+day+"天"+hours+"时"+minutes+"分"+seconds+"秒结束");
 			} else{
-				$('.limit-buy-goods p').eq(i).html("活动结束");
+				$('.coupons-goods p').eq(i).html("活动结束");
 				$('.limit-Btn i').eq(i).css('background','#CECECE');
 				
 			}
