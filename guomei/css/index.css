@@ -318,7 +318,7 @@
 
 .goods-block .block-tab{
 	width: 960px;
-	height: 450px;
+	height: 470px;
 	overflow: hidden;
 	position: absolute;
 	left: 0;
@@ -328,7 +328,7 @@
 .block-tab li{
 	float: left;
 	width: 159px;
-	height: 204px;
+	height: 215px;
 	padding: 10px 15px;
 	border-right:1px solid #f3f3f3;
 	border-bottom: 1px solid #f3f3f3;
