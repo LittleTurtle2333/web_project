@@ -111,7 +111,7 @@ $(function  () {
 		$('.cart-more').eq(0).show();
 	},
 	function  () {
-		// $('.cart-more').eq(0).hide();
+		$('.cart-more').eq(0).hide();
 	});
 	//================
 	$('.grape').hover(function  () {
@@ -148,12 +148,75 @@ $(function  () {
 	function  () {
 		$('.cart-more').eq(5).hide();
 	});
+	//========================
+	$('.furniture').hover(function  () {
+		$('.cart-more').eq(6).show();
+	},
+	function  () {
+		$('.cart-more').eq(6).hide();
+	});
+	//========================
+	$('.household').hover(function  () {
+		$('.cart-more').eq(7).show();
+	},
+	function  () {
+		$('.cart-more').eq(7).hide();
+	});
+	//========================
+	$('.foodAndBeverage').hover(function  () {
+		$('.cart-more').eq(8).show();
+	},
+	function  () {
+		$('.cart-more').eq(8).hide();
+	});
+	//========================
+	$('.beautyMakeupAGuard').hover(function  () {
+		$('.cart-more').eq(9).show();
+	},
+	function  () {
+		$('.cart-more').eq(9).hide();
+	});
+	//========================
+	$('.dress').hover(function  () {
+		$('.cart-more').eq(10).show();
+	},
+	function  () {
+		$('.cart-more').eq(10).hide();
+	});
+	//========================
+	$('.movement').hover(function  () {
+		$('.cart-more').eq(11).show();
+	},
+	function  () {
+		$('.cart-more').eq(11).hide();
+	});
+	//========================
+	$('.car').hover(function  () {
+		$('.cart-more').eq(12).show();
+	},
+	function  () {
+		$('.cart-more').eq(12).hide();
+	});
+	//========================
+	$('.financial').hover(function  () {
+		$('.cart-more').eq(13).show();
+	},
+	function  () {
+		$('.cart-more').eq(13).hide();
+	});
+	//========================
+	$('.theHousekeeper').hover(function  () {
+		$('.cart-more').eq(14).show();
+	},
+	function  () {
+		$('.cart-more').eq(14).hide();
+	});
 	
 	//====================
 	$('.cart-more').hover(function  () {
 		$(this).show();
 	},function  () {
-		// $(this).hide();
+		$(this).hide();
 	})
 	
 	

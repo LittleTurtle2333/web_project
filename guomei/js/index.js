@@ -150,16 +150,13 @@ $(function  () {
 	
 	
 	//=========Tab切换
-	//精选尚品
 	$('.at1').mouseenter(function  () {
 		var index = $(this).index();
 		$(this).addClass('active').siblings('li').removeClass('active')
 		$('.tabChange1').eq(index).css('display','block').siblings('.tabChange1').css('display',"none")
 		
 	})
-	
-	
-	//白酒馆
+
 	$('.at2').mouseenter(function  () {
 		var index = $(this).index();
 		$(this).addClass('active').siblings('li').removeClass('active')
@@ -168,7 +165,6 @@ $(function  () {
 	})
 	
 	
-	//红酒馆
 	$('.at3').mouseenter(function  () {
 		var index = $(this).index();
 		$(this).addClass('active').siblings('li').removeClass('active')
@@ -177,7 +173,6 @@ $(function  () {
 	})
 	
 	
-	//洋酒&啤酒
 	$('.at4').mouseenter(function  () {
 		var index = $(this).index();
 		$(this).addClass('active').siblings('li').removeClass('active')
@@ -328,7 +323,8 @@ $(function  () {
 		
 	})
 	
-	var aLi = $('.tabChange1').eq(4).find('li');
+	
+	var aLi = $('.tabChange2').eq(1).find('li');
 	aLi.click(function  () {
 		var index = $(this).index()+30;
 		
@@ -340,22 +336,9 @@ $(function  () {
 		
 	})
 	
-	
-	var aLi = $('.tabChange2').eq(1).find('li');
-	aLi.click(function  () {
-		var index = $(this).index()+40;
-		
-		if (myData) {
-			var id = myData[index].id;
-			//跳转到对应的商品详情页
-			location.href = "goods-details.html?"+id;
-		}
-		
-	})
-	
 	var aLi = $('.tabChange2').eq(2).find('li');
 	aLi.click(function  () {
-		var index = $(this).index()+50;
+		var index = $(this).index()+40;
 		
 		if (myData) {
 			var id = myData[index].id;
@@ -368,6 +351,19 @@ $(function  () {
 	
 	var aLi = $('.tabChange2').eq(3).find('li');
 	aLi.click(function  () {
+		var index = $(this).index()+50;
+		
+		if (myData) {
+			var id = myData[index].id;
+			//跳转到对应的商品详情页
+			location.href = "goods-details.html?"+id;
+		}
+		
+	})
+	
+	
+	var aLi = $('.tabChange3').eq(1).find('li');
+	aLi.click(function  () {
 		var index = $(this).index()+60;
 		
 		if (myData) {
@@ -379,7 +375,7 @@ $(function  () {
 	})
 	
 	
-	var aLi = $('.tabChange2').eq(4).find('li');
+	var aLi = $('.tabChange3').eq(2).find('li');
 	aLi.click(function  () {
 		var index = $(this).index()+70;
 		
@@ -390,8 +386,8 @@ $(function  () {
 		}
 		
 	})
-	
-	var aLi = $('.tabChange3').eq(1).find('li');
+
+	var aLi = $('.tabChange3').eq(3).find('li');
 	aLi.click(function  () {
 		var index = $(this).index()+80;
 		
@@ -402,9 +398,8 @@ $(function  () {
 		}
 		
 	})
-	
-	
-	var aLi = $('.tabChange3').eq(2).find('li');
+
+	var aLi = $('.tabChange3').eq(4).find('li');
 	aLi.click(function  () {
 		var index = $(this).index()+90;
 		
@@ -441,6 +436,28 @@ $(function  () {
 		
 	})
 	
+	var aLi = $('.tabChange4').eq(3).find('li');
+	aLi.click(function  () {
+		var index = $(this).index()+120;
+		
+		if (myData) {
+			var id = myData[index].id;
+			//跳转到对应的商品详情页
+			location.href = "goods-details.html?"+id;
+		}
+		
+	})
+	var aLi = $('.tabChange4').eq(4).find('li');
+	aLi.click(function  () {
+		var index = $(this).index()+130;
+		
+		if (myData) {
+			var id = myData[index].id;
+			//跳转到对应的商品详情页
+			location.href = "goods-details.html?"+id;
+		}
+		
+	})
 	
 	
 	
