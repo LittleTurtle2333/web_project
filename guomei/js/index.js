@@ -171,8 +171,7 @@ $(function  () {
 		$('.tabChange3').eq(index).css('display','block').siblings('.tabChange3').css('display',"none")
 		
 	})
-	
-	
+
 	$('.at4').mouseenter(function  () {
 		var index = $(this).index();
 		$(this).addClass('active').siblings('li').removeClass('active')

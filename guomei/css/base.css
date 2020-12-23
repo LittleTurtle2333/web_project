@@ -441,7 +441,7 @@ img {
   background: #dd00a7;
   text-align: center;
   color: #ffffff;
-  float: right;
+  /* float: right; */
 }
 
 #top .hot-word {
