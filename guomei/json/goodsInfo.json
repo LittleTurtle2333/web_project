@@ -1,10 +1,10 @@
 [
 	{
 		"title":"title",
-		"shopad":"shopad",
+		"shopad":"简介",
 		"tprice":"tprice",
 		"sales":0,
 		"assess":0,
-		"stock":"stock"
+		"stock":"999"
 	}
 ]
