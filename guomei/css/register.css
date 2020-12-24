@@ -65,7 +65,8 @@ body{
 .m{
 	width: 990px;
 	height: 566px;
-	margin: 0 auto;
+	margin: 0 auto 60px;
+	
 }
 .m .mt{
 	width: 990px;
