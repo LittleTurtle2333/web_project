@@ -34,9 +34,8 @@ $(function  () {
 		
 		$('#login').empty();//如果登录成功，删除注册登录提示
 		
-		var aNode = $("<a href='#'>"+oldLoginUser.username+"</a><a href='#'>[退出]</a>");
+		var aNode = $("<li><a  href='#'>"+oldLoginUser.username+"</a></li><li><a href='#'>[退出]</a></li>");
 		aNode.appendTo($('#login'))
-		
 		
 	}
 	

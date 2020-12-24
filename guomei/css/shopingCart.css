@@ -293,7 +293,7 @@ img{border: 0;}
 
 .cart-outer{
 	width: 990px;
-	margin: 0 auto;
+	margin: 0 auto 60px;
 	border: 1px solid #dddddd;
 	overflow: hidden;
 	display: none;
