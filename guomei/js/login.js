@@ -51,15 +51,12 @@ $(function  () {
 					console.log("登录成功");
 					openNewpage();
 					isExist = true;
-					
-					//如果点击了自动登录 保存登录成功获得用户名和密码
-					if ($('#cbox').is(":checked")) {
+
 						var loginUser = {
 							username:username,
 							pwd:pwd
 						};
 						$.cookie("loginUser",JSON.stringify(loginUser),{expires:30,path:"/"});
-					}
 				}
 			}
 			if (isExist == false) {

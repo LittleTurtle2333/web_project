@@ -14,27 +14,7 @@ $(function  () {
 		$(this).parent().siblings('.error').show();
 		
 	});
-	
-	
-	//点击切换验证码
-	$('.Imgcode').click(function  () {
-		var num = parseInt(Math.random()*9000+1000);
-		$(this).html(num);
-	})
-	
-	
-	//获取验证码后的倒计时
-	$('.Pcode').click(function  () {
-		var i=60;
-		var timer = setInterval(function  () {
-			i--;
-			$('.Pcode').html(i+"秒后重新获取");
-			if (i<=0) {
-			clearInterval(timer);
-			$('.Pcode').html("点击重新获取验证码")
-		}
-		},1000)
-	})
+
 	
 	//初始化用户名和密码
 	var _username =0;
@@ -42,9 +22,7 @@ $(function  () {
 	var y1 = false,
 	    y2 = false,
 	    y3 = false,
-	    y4 = false,
-	    y5 = false,
-	    y6 = false;
+		y4 = false;
 	
 	//验证
 	//手机号码验证
@@ -61,21 +39,7 @@ $(function  () {
 		}
 	})
 	
-	//图形验证码验证
-	$('#yzm').blur(function  () {
-		var yzm = parseInt($('#yzm').val());
-		num = parseInt($('.Imgcode').html());
-		if (yzm==num) {
-			$('.hint').eq(1).hide();
-			$('.error').eq(1).hide();
-			y2 = true;
-		} else{
-			$('.error').eq(1).show();
-		}
-		
-	})
-	
-	
+
 	//密码验证
 	
 	var testpwd = 0;//初始化获取到的密码，再次确认用
@@ -85,11 +49,11 @@ $(function  () {
 		var pwd= $(this).val();
 		if (pattern.test(pwd)) {
 			testpwd = pwd;
-			$('.hint').eq(2).hide();
-			$('.error').eq(2).hide();
-			y3=true;
+			$('.hint').eq(1).hide();
+			$('.error').eq(1).hide();
+			y2=true;
 		} else{
-			$('.error').eq(2).show();
+			$('.error').eq(1).show();
 		}
 	})
 	//第二次确认密码
@@ -97,7 +61,21 @@ $(function  () {
 		var pwd1 = $(this).val();
 		if (testpwd==pwd1) {
 			_password = pwd1;//储存正确输入的密码
-			$('.hint').eq(3).hide();
+			$('.hint').eq(2).hide();
+			$('.error').eq(2).hide();
+			y3 = true;
+		} else{
+			$('.error').eq(2).show();
+		}
+		
+	})
+	
+	
+	
+	//checkbox验证
+	$('#dealBtn').click(function  () {
+		var isTrue = $(this).is(":checked");
+		if (isTrue) {
 			$('.error').eq(3).hide();
 			y4 = true;
 		} else{
@@ -107,40 +85,16 @@ $(function  () {
 	})
 	
 	
-	//手机验证码验证
-	$('#phoneCode').blur(function  () {
-		var phoneCode = $(this).val();
-		var testcode = parseInt($('.Imgcode').html());
-		if (phoneCode==testcode) {
-			$('.hint').eq(4).hide();
-			$('.error').eq(4).hide();
-			y5 = true;
-		} else{
-			$('.error').eq(4).show();
-		}
-		
-	})
-	
-	
-	//checkbox验证
-	$('#dealBtn').click(function  () {
-		var isTrue = $(this).is(":checked");
-		if (isTrue) {
-			$('.error').eq(5).hide();
-			y6 = true;
-		} else{
-			$('.error').eq(5).show();
-		}
-		
-	})
-	
-	
 	
 	//最后一步验证，把用户名密码存到cookie
 	$('#Btn').click(function  () {
+		console.log(y1);
+		console.log(y2);
+		console.log(y3);
+		console.log(y4);
 		
 		//判断各项表单是否全部填写完毕
-		if (y1 && y2 && y3 && y4 && y5 && y6) {
+		if (y1 && y2 && y3 && y4) {
 			console.log("可以存储了");
 			console.log(_username);
 			console.log(_password);
@@ -183,13 +137,6 @@ $(function  () {
 			if (!y4) {
 				$('.error').eq(3).show();
 			};
-			if (!y5) {
-				$('.error').eq(4).show();
-			};
-			if (!y6) {
-				$('.error').eq(5).show();
-			};
-			
 		}
 		
 	})

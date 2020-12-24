@@ -238,8 +238,7 @@ $(function  () {
 	$(window).scroll(function  () {
 		
 		var _scrollTop = $(window).scrollTop();
-		
-		console.log(_scrollTop);
+
 		
 		if (_scrollTop>945 && _scrollTop<5040) {
 			$('.louti').show();
