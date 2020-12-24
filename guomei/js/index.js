@@ -61,20 +61,6 @@ $(function  () {
 	
 	
 	
-	//限时抢购
-	$.get("json/limit.json",function  (data) {
-		
-		for (var i=0;i<data.length;i++) {
-			var obj = data[i];
-			$('.limit-Img img').eq(i).attr('src',obj.img);
-			$('.coupons-goods li span b').eq(i).html(obj.price+".00");
-			
-			countDown (obj.time,i);
-			
-		}
-		
-	})
-	
 	
 	function countDown (time,i) {
 		var endtime = new Date(time)
